@@ -1,0 +1,286 @@
+<style>
+  .outlook-section {
+    margin-top: 3rem;
+
+    & > h4 {
+      margin: 0;
+      border-top: abstracts.$purple solid 3px;
+      border-bottom: abstracts.$purple solid 1px;
+      padding: 1rem 2rem;
+    }
+  }
+
+  .outlook-element__container {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .outlook-element {
+    padding: 2rem;
+    border-right: abstracts.$purple solid 2px;
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+
+  .outlook-element > h4 {
+    margin: 0 0 0.5rem 0;
+    max-width: 100%;
+
+    span {
+      display: block;
+    }
+  }
+
+  .outlook-element > div {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .outlook-element > p {
+    margin: 0;
+    font-size: abstracts.$font-size-tiny;
+  }
+
+  .outlook-item {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: space-between;
+    & > div {
+      &:nth-child(2) {
+        flex: 1;
+      }
+      margin-bottom: 1rem;
+      padding: 1rem;
+      img {
+        width: 5rem;
+        height: auto;
+        background: abstracts.$background;
+        border-radius: 100%;
+        padding: 1rem;
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+      }
+
+      h1,
+      h4,
+      p {
+        margin: 0;
+      }
+
+      h4 {
+        font-weight: 400;
+        max-width: 9rem;
+      }
+
+      p {
+        font-size: abstracts.$font-size-tiny;
+        max-width: 9rem;
+      }
+    }
+  }
+
+  .outlook-item__comparison {
+    border-top: darken($color: abstracts.$grey, $amount: 5) solid 2px;
+  }
+
+  .outlook-extra-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    div {
+      padding: 0.25rem;
+
+      &:last-of-type {
+        padding: 1rem;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .outlook-extra-metric-items {
+    display: flex;
+    align-items: center;
+  }
+
+  .outlook-extra-item__metric {
+    width: 6rem;
+
+    p:nth-of-type(1) {
+      font-size: abstracts.$font-size-medium;
+    }
+
+    p:nth-of-type(2) {
+      font-size: abstracts.$font-size-tiny;
+    }
+  }
+
+  .outlook-extra-item__metric + .outlook-extra-item__metric {
+    margin-left: 1rem;
+  }
+</style>
+
+<div class="outlook-element__container">
+  <div class="outlook-element">
+    <h4>Outlook <span>Summary</span></h4>
+    <div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Projected Visits</h4>
+          <h1>200</h1>
+          <p>/bi-weekly</p>
+        </div>
+        <div class="outlook-item__comparison"></div>
+      </div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Projected Clients</h4>
+          <h1>134</h1>
+          <p>/bi-weekly</p>
+        </div>
+        <div class="outlook-item__comparison"></div>
+      </div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Existing Nurses</h4>
+          <h1>100</h1>
+          <p></p>
+        </div>
+        <div class="outlook-item__comparison"></div>
+      </div>
+      <div class="outlook-extra-item">
+        <div>
+          <p>by</p>
+          <p>Type</p>
+        </div>
+        <div class="outlook-extra-metric-items">
+          <div class="outlook-extra-item__metric">
+            <p>67</p>
+            <p>Full time 0.0%</p>
+          </div>
+          <div class="outlook-extra-item__metric">
+            <p>25</p>
+            <p>Part time 0.0%</p>
+          </div>
+          <div class="outlook-extra-item__metric">
+            <p>8</p>
+            <p>Casual 0.0%</p>
+          </div>
+        </div>
+        <div class="outlook-item__comparison"></div>
+      </div>
+    </div>
+  </div>
+  <div class="outlook-element">
+    <h4>Projected Staff <span>Utilization</span></h4>
+    <div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Utilization</h4>
+          <h1>101%</h1>
+          <p></p>
+        </div>
+        <div class="outlook-item__comparison"><p>-</p></div>
+      </div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Total Nurse Gap</h4>
+          <h1>+15</h1>
+          <p>Recommended additional nurses to optimize KPIs</p>
+        </div>
+        <div class="outlook-item__comparison"><p>-</p></div>
+      </div>
+      <div class="outlook-extra-item">
+        <div>
+          <p>by</p>
+          <p>Type</p>
+        </div>
+        <div class="outlook-extra-metric-items">
+          <div class="outlook-extra-item__metric">
+            <p>+8</p>
+            <p>Full time</p>
+          </div>
+          <div class="outlook-extra-item__metric">
+            <p>+4</p>
+            <p>Part time</p>
+          </div>
+          <div class="outlook-extra-item__metric">
+            <p>+3</p>
+            <p>Casual</p>
+          </div>
+        </div>
+        <div class="outlook-item__comparison"></div>
+      </div>
+    </div>
+    <p>Compared to Existing Geoboundaries</p>
+  </div>
+  <div class="outlook-element">
+    <h4>Projected Nurse <span>Workload</span></h4>
+    <div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Average Visits per Nurse</h4>
+          <h1>39</h1>
+          <p>/bi-weekly</p>
+        </div>
+        <div class="outlook-item__comparison"><p>-</p></div>
+      </div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Distance Travelled per Nurse</h4>
+          <h1>200 km</h1>
+          <p>/bi-weekly</p>
+        </div>
+        <div class="outlook-item__comparison"><p>-</p></div>
+      </div>
+    </div>
+    <p>Compared to Existing Geoboundaries</p>
+  </div>
+  <div class="outlook-element">
+    <h4>Projected <span>Patient Care</span></h4>
+    <div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Continuity of Care</h4>
+          <h1>57%</h1>
+          <p></p>
+        </div>
+        <div class="outlook-item__comparison"><p>-</p></div>
+      </div>
+    </div>
+    <p>Compared to Existing Geoboundaries</p>
+  </div>
+  <div class="outlook-element">
+    <h4>Projected <span>Acceptance</span></h4>
+    <div>
+      <div class="outlook-item">
+        <div><img src="https://via.placeholder.com/32" /></div>
+        <div>
+          <h4>Referral Acceptance Rate</h4>
+          <h1>85%</h1>
+          <p></p>
+        </div>
+        <div class="outlook-item__comparison"><p>-</p></div>
+      </div>
+    </div>
+    <p>Compared to Existing Geoboundaries</p>
+  </div>
+</div>

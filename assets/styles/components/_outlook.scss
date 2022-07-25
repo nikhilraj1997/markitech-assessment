@@ -1,0 +1,136 @@
+@use "../abstracts/" as abstracts;
+
+.outlook-section {
+  margin-top: 3rem;
+
+  & > h4 {
+    margin: 0;
+    border-top: abstracts.$purple solid 3px;
+    border-bottom: abstracts.$purple solid 1px;
+    padding: 1rem 2rem;
+  }
+}
+
+.outlook-element__container {
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.outlook-element {
+  padding: 2rem;
+  border-right: abstracts.$purple solid 2px;
+
+  &:last-of-type {
+    border-right: none;
+  }
+}
+
+.outlook-element > h4 {
+  margin: 0 0 0.5rem 0;
+  max-width: 100%;
+
+  span {
+    display: block;
+  }
+}
+
+.outlook-element > div {
+  display: flex;
+  align-items: stretch;
+}
+
+.outlook-element > p {
+  margin: 0;
+  font-size: abstracts.$font-size-tiny;
+}
+
+.outlook-item {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
+  & > div {
+    &:nth-child(2) {
+      flex: 1;
+    }
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    img {
+      width: 5rem;
+      height: auto;
+      background: abstracts.$background;
+      padding: 1rem;
+      border-radius: 100%;
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+    }
+
+    h1,
+    h4,
+    p {
+      margin: 0;
+    }
+
+    h4 {
+      font-weight: 400;
+      max-width: 9rem;
+    }
+
+    p {
+      font-size: abstracts.$font-size-tiny;
+      max-width: 9rem;
+    }
+  }
+}
+
+.outlook-item__comparison {
+  border-top: darken($color: abstracts.$grey, $amount: 5) solid 2px;
+}
+
+.outlook-extra-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  div {
+    padding: 0.25rem;
+
+    &:last-of-type {
+      padding: 1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .outlook-item__comparison {
+    border: none;
+  }
+}
+
+.outlook-extra-metric-items {
+  display: flex;
+  align-items: center;
+}
+
+.outlook-extra-item__metric {
+  width: 6rem;
+
+  p:nth-of-type(1) {
+    font-size: abstracts.$font-size-medium;
+  }
+
+  p:nth-of-type(2) {
+    font-size: abstracts.$font-size-tiny;
+  }
+}
+
+.outlook-extra-item__metric + .outlook-extra-item__metric {
+  margin-left: 1rem;
+}

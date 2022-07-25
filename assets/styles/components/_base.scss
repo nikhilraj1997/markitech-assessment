@@ -1,0 +1,152 @@
+@use "../abstracts/" as abstracts;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: abstracts.$font-family-base;
+  font-size: abstracts.$font-size-base;
+  line-height: abstracts.$line-height-base;
+  color: abstracts.$color-text;
+  background-color: abstracts.$background;
+  padding: 5rem;
+  overflow: none;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: abstracts.$purple;
+  color: abstracts.$color-text-light;
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+}
+
+.button--secondary {
+  background: abstracts.$dark-red;
+}
+
+input {
+  accent-color: abstracts.$color-text-alt;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 0 0.5rem 0 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  border: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.section {
+  margin: 0;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.radio-list {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  & > label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    font-size: abstracts.$font-size-small;
+  }
+
+  &--row > div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+
+    label + label {
+      margin-left: 2rem;
+    }
+  }
+
+  &--column > div {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+
+    label + label {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.nested-inputs {
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    display: flex;
+    padding: 0.25rem 0;
+
+    input[type="number"] {
+      width: 5rem;
+    }
+  }
+}
+
+.dash-dropdown {
+  background: lighten(abstracts.$background-dark, 20%);
+
+  .Select-control {
+    border: none;
+    background: lighten(abstracts.$background-dark, 20%);
+  }
+
+  .Select-value {
+    color: abstracts.$color-text-alt;
+  }
+
+  .Select,
+  .Select div,
+  .Select input,
+  .Select span {
+    min-width: fit-content;
+  }
+
+  .Select-input {
+    & > input {
+      padding: 0.25rem;
+    }
+  }
+
+  & + .dash-dropdown {
+    margin-left: 3rem;
+  }
+}
+
+// .has-value.Select--single>.Select-control .Select-value .Select-value-label,
+// .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
+//   color: abstracts.$color-text-alt;
+// }
+
+// .Select--single>.Select-control .Select-value, .Select-placeholder {
+//   min-width: 20%;
+// }

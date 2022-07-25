@@ -1,0 +1,10 @@
+@use "../abstracts/" as abstracts;
+
+.notes-section {
+  margin-top: 3rem;
+  border-top: abstracts.$purple solid 2px;
+
+  p {
+    max-width: 25rem;
+  }
+}

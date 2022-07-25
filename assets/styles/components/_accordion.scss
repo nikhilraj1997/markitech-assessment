@@ -1,0 +1,19 @@
+@use "../abstracts/" as abstracts;
+
+details {
+  user-select: none;
+
+  & > summary {
+    cursor: pointer;
+    outline: none;
+    padding: 0.5rem;
+    margin: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background: abstracts.$background-dark;
+  }
+}

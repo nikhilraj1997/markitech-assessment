@@ -1,0 +1,54 @@
+@use "../abstracts/" as abstracts;
+
+.header {
+  background: abstracts.$light-blue;
+  width: 100%;
+}
+
+.header__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.header__location {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    img {
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+      background: abstracts.$background;
+      border-radius: 100%;
+    }
+
+    h1,
+    h4 {
+      margin: 0 0 0 1rem;
+    }
+  }
+}
+
+.header__refresh {
+  text-align: end;
+
+  p {
+    margin: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: abstracts.$background solid 2px;
+}
+
+.nav > div {
+  display: flex;
+  flex-grow: 2;
+}

@@ -1,0 +1,80 @@
+@use "../abstracts/" as abstracts;
+
+.projections-section {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.summary-section,
+.projection-graphs {
+  width: 50%;
+  padding: 0 2rem;
+}
+
+.summary-section {
+  border-right: abstracts.$purple solid 2px;
+}
+
+.summary-tab {
+  padding: 0 3rem;
+  border-bottom: abstracts.$purple solid 2px;
+
+  .tab {
+    border-radius: 1rem 1rem 0 0;
+    padding: 0.5rem 1rem !important;
+    background: abstracts.$background-dark !important;
+    border: darken(abstracts.$grey, 5) 1px solid !important;
+    border-bottom: none !important;
+
+    &--selected {
+      background: abstracts.$red !important;
+      color: abstracts.$color-text-light !important;
+    }
+  }
+
+  &__content {
+    padding: 0;
+    border: none;
+
+    table {
+      width: 100%;
+      border: none;
+      border-collapse: collapse;
+
+      th,
+      td {
+        border: none;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      thead {
+        border-bottom: abstracts.$purple solid 1px;
+      }
+
+      tbody {
+        th {
+          font-weight: 400;
+          text-align: left;
+        }
+
+        tr {
+          &:nth-child(even) {
+            background: abstracts.$light-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.projection-graphs__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h4,
+  div {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,749 @@
+@charset "UTF-8";
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+html {
+  background: #fff;
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  background: transparent;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Color variables */
+/* Font variables */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: hsl(294deg, 25%, 22%);
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 5rem;
+  overflow: none;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: hsl(294deg, 25%, 22%);
+  color: hsl(0deg, 0%, 100%);
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+}
+
+.button--secondary {
+  background: hsl(346deg, 66%, 31%);
+}
+
+input {
+  accent-color: hsl(354deg, 79%, 51%);
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin: 0 0.5rem 0 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  border: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.section {
+  margin: 0;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.radio-list {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.radio-list > label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.radio-list label {
+  font-size: 1.2rem;
+}
+.radio-list--row > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+.radio-list--row > div label + label {
+  margin-left: 2rem;
+}
+.radio-list--column > div {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+.radio-list--column > div label + label {
+  margin-top: 1rem;
+}
+
+.nested-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.nested-inputs > div {
+  display: flex;
+  padding: 0.25rem 0;
+}
+.nested-inputs > div input[type=number] {
+  width: 5rem;
+}
+
+.dash-dropdown {
+  background: white;
+}
+.dash-dropdown .Select-control {
+  border: none;
+  background: white;
+}
+.dash-dropdown .Select-value {
+  color: hsl(354deg, 79%, 51%);
+}
+.dash-dropdown .Select,
+.dash-dropdown .Select div,
+.dash-dropdown .Select input,
+.dash-dropdown .Select span {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.dash-dropdown .Select-input > input {
+  padding: 0.25rem;
+}
+.dash-dropdown + .dash-dropdown {
+  margin-left: 3rem;
+}
+
+.header {
+  background: hsl(178deg, 42%, 76%);
+  width: 100%;
+}
+
+.header__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.header__location {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__location div img {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 100%;
+}
+.header__location div h1,
+.header__location div h4 {
+  margin: 0 0 0 1rem;
+}
+
+.header__refresh {
+  text-align: end;
+}
+.header__refresh p {
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: hsl(0deg, 0%, 100%) solid 2px;
+}
+
+.nav > div {
+  display: flex;
+  flex-grow: 2;
+}
+
+.model-options-section {
+  background: hsl(0deg, 0%, 98%);
+}
+
+.model-options-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.model-options-form > .radio-list {
+  border-right: hsl(294deg, 25%, 22%) solid 1px;
+  padding: 2rem;
+}
+.model-options-form > .radio-list:last-of-type {
+  border-right: none;
+}
+.model-options-form > .radio-list label {
+  display: flex;
+  max-width: 19rem;
+  align-items: flex-start;
+}
+.model-options-form > .radio-list label p {
+  margin: 0;
+}
+.model-options-form > .radio-list h6 {
+  margin: 0;
+}
+
+.model-options-form__actions {
+  flex-grow: 2;
+  text-align: end;
+}
+.model-options-form__actions button + button {
+  margin-left: 1rem;
+}
+
+.outlook-section {
+  margin-top: 3rem;
+}
+.outlook-section > h4 {
+  margin: 0;
+  border-top: hsl(294deg, 25%, 22%) solid 3px;
+  border-bottom: hsl(294deg, 25%, 22%) solid 1px;
+  padding: 1rem 2rem;
+}
+
+.outlook-element__container {
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.outlook-element {
+  padding: 2rem;
+  border-right: hsl(294deg, 25%, 22%) solid 2px;
+}
+.outlook-element:last-of-type {
+  border-right: none;
+}
+
+.outlook-element > h4 {
+  margin: 0 0 0.5rem 0;
+  max-width: 100%;
+}
+.outlook-element > h4 span {
+  display: block;
+}
+
+.outlook-element > div {
+  display: flex;
+  align-items: stretch;
+}
+
+.outlook-element > p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.outlook-item {
+  display: flex;
+  flex-direction: column;
+}
+.outlook-item > div {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.outlook-item > div:nth-child(2) {
+  flex: 1;
+}
+.outlook-item > div img {
+  width: 5rem;
+  height: auto;
+  background: hsl(0deg, 0%, 100%);
+  padding: 1rem;
+  border-radius: 100%;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+.outlook-item > div h1,
+.outlook-item > div h4,
+.outlook-item > div p {
+  margin: 0;
+}
+.outlook-item > div h4 {
+  font-weight: 400;
+  max-width: 9rem;
+}
+.outlook-item > div p {
+  font-size: 1rem;
+  max-width: 9rem;
+}
+
+.outlook-item__comparison {
+  border-top: #ededed solid 2px;
+}
+
+.outlook-extra-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.outlook-extra-item div {
+  padding: 0.25rem;
+}
+.outlook-extra-item div:last-of-type {
+  padding: 1rem;
+}
+.outlook-extra-item div p {
+  margin: 0;
+}
+.outlook-extra-item .outlook-item__comparison {
+  border: none;
+}
+
+.outlook-extra-metric-items {
+  display: flex;
+  align-items: center;
+}
+
+.outlook-extra-item__metric {
+  width: 6rem;
+}
+.outlook-extra-item__metric p:nth-of-type(1) {
+  font-size: 1.8rem;
+}
+.outlook-extra-item__metric p:nth-of-type(2) {
+  font-size: 1rem;
+}
+
+.outlook-extra-item__metric + .outlook-extra-item__metric {
+  margin-left: 1rem;
+}
+
+details {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+details > summary {
+  cursor: pointer;
+  outline: none;
+  padding: 0.5rem;
+  margin: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background: hsl(0deg, 0%, 98%);
+}
+
+.projections-section {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.summary-section,
+.projection-graphs {
+  width: 50%;
+  padding: 0 2rem;
+}
+
+.summary-section {
+  border-right: hsl(294deg, 25%, 22%) solid 2px;
+}
+
+.summary-tab {
+  padding: 0 3rem;
+  border-bottom: hsl(294deg, 25%, 22%) solid 2px;
+}
+.summary-tab .tab {
+  border-radius: 1rem 1rem 0 0;
+  padding: 0.5rem 1rem !important;
+  background: hsl(0deg, 0%, 98%) !important;
+  border: #ededed 1px solid !important;
+  border-bottom: none !important;
+}
+.summary-tab .tab--selected {
+  background: hsl(354deg, 79%, 51%) !important;
+  color: hsl(0deg, 0%, 100%) !important;
+}
+.summary-tab__content {
+  padding: 0;
+  border: none;
+}
+.summary-tab__content table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+.summary-tab__content table th,
+.summary-tab__content table td {
+  border: none;
+  padding: 1rem;
+  text-align: center;
+}
+.summary-tab__content table thead {
+  border-bottom: hsl(294deg, 25%, 22%) solid 1px;
+}
+.summary-tab__content table tbody th {
+  font-weight: 400;
+  text-align: left;
+}
+.summary-tab__content table tbody tr:nth-child(even) {
+  background: hsl(178deg, 42%, 76%);
+}
+
+.projection-graphs__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.projection-graphs__header h4,
+.projection-graphs__header div {
+  flex-grow: 1;
+}
+
+.geoboundary-section {
+  margin-top: 3rem;
+}
+.geoboundary-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: hsl(294deg, 25%, 22%) solid 2px;
+}
+.geoboundary-section__header h4 {
+  margin: 0;
+}
+.geoboundary-section__content {
+  display: flex;
+}
+.geoboundary-section__options {
+  border-right: hsl(294deg, 25%, 22%) solid 2px;
+}
+.geoboundary-section__options form {
+  padding: 2rem;
+}
+.geoboundary-section__options form #color-map-selector {
+  padding-bottom: 2rem;
+  border-bottom: hsl(294deg, 25%, 22%) solid 1px;
+}
+.geoboundary-section__options form #additional-map-layers {
+  margin-top: 2rem;
+}
+.geoboundary-section__options .radio-list > div label {
+  display: flex;
+  align-items: flex-start;
+}
+.geoboundary-section__info {
+  border-top: hsl(294deg, 25%, 22%) solid 2px;
+  padding: 2rem;
+}
+.geoboundary-section__info p {
+  margin: 0;
+  max-width: 25rem;
+}
+.geoboundary-section__info p:last-of-type {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.geoboundary-section__total-count {
+  border-bottom: hsl(294deg, 25%, 22%) solid 1px;
+}
+.geoboundary-section__geocode-changes p {
+  padding: 1rem 0;
+}
+.geoboundary-section__geocode-changes div {
+  max-height: 30rem;
+  overflow-y: scroll;
+}
+.geoboundary-section__geocode-changes div table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+.geoboundary-section__geocode-changes div table th,
+.geoboundary-section__geocode-changes div table td {
+  border: none;
+  padding: 1rem;
+  text-align: left;
+}
+.geoboundary-section__geocode-changes div table thead {
+  border-top: hsl(294deg, 25%, 22%) solid 1px;
+}
+.geoboundary-section__geocode-changes div table tbody td {
+  text-align: left;
+}
+.geoboundary-section__map {
+  flex-grow: 4;
+  padding: 0;
+  margin: 0;
+}
+.geoboundary-section__map > div {
+  height: 100%;
+}
+
+.notes-section {
+  margin-top: 3rem;
+  border-top: hsl(294deg, 25%, 22%) solid 2px;
+}
+.notes-section p {
+  max-width: 25rem;
+}/*# sourceMappingURL=main.css.map */
