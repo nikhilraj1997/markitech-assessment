@@ -11,6 +11,7 @@ external_stylesheets = [
 app = Dash(__name__, title="Markitech.ai Assessment",
            external_stylesheets=external_stylesheets)
 
+# Navbar element
 _navbar = html.Div(children=[
     html.Nav(children=[
         html.Div(children=[
@@ -38,6 +39,7 @@ _navbar = html.Div(children=[
 ], className="header")
 
 
+# Model options section
 _model_options_section = html.Div(children=[
     html.Form(children=[
         html.Fieldset(children=[
@@ -82,6 +84,16 @@ _model_options_section = html.Div(children=[
 
 
 def outlook_item(icon, metric, value, subtext=None, comparison=None):
+    '''
+    Function to generate an outlook item
+
+    Args:
+        icon (str): icon to display
+        metric (str): metric to display
+        value (str): value to display
+        subtext (str): subtext to display
+        comparison (str): comparison to display
+    '''
     return html.Div(children=[
         html.Div(children=[
             html.Img(src=icon)
@@ -99,6 +111,12 @@ def outlook_item(icon, metric, value, subtext=None, comparison=None):
 
 
 def outlook_extra_item(extra_metric_items=[]):
+    '''
+    Function to generate an outlook extra item
+
+    Args:
+        extra_metric_items (list): list of extra metric items
+    '''
     return html.Div(children=[
         html.Div(children=[
             html.P("by"),
@@ -112,6 +130,13 @@ def outlook_extra_item(extra_metric_items=[]):
 
 
 def outlook_extra_item_metric(value, text):
+    '''
+    Function to generate an outlook extra item metric
+
+    Args:
+        value (str): value to display
+        text (str): text to display
+    '''
     return html.Div(children=[
         html.P(value),
         html.P(text, className="outlook-item__subtext")
@@ -119,6 +144,15 @@ def outlook_extra_item_metric(value, text):
 
 
 def outlook_element(title, items, extra_items=None, subtext=None):
+    '''
+    Function to generate an outlook element
+
+    Args:
+        title (str): title to display
+        items (list): list of items to display
+        extra_items (list): list of extra items to display
+        subtext (str): subtext to display
+    '''
     if extra_items:
         items.extend(extra_items)
 
@@ -129,6 +163,7 @@ def outlook_element(title, items, extra_items=None, subtext=None):
     ], className="outlook-element")
 
 
+# 5 secepare outlook elements generated with the help of the outlook_element and outlook_extra_item function
 _outlook_element_1 = outlook_element(["Outlook ", html.Span("Summary")],
                                      [
     outlook_item("/assets/icons/icon1.svg",
@@ -174,6 +209,8 @@ _outlook_section = html.Div(children=[
              _outlook_element_3, _outlook_element_4, _outlook_element_5], className="outlook-element__container")
 ], className="outlook-section")
 
+
+# Summary in the form of a table
 _summary = html.Div(children=[
     html.Div(children=[
         html.H4("Nurse Team Summary"),
@@ -193,6 +230,18 @@ _summary = html.Div(children=[
 
 
 def generate_random_df(num_rows, num_cols, min_val, max_val, col_names=None, row_names=None):
+    '''
+    Function to generate a random dataframe
+
+    Args:
+        num_rows (int): number of rows
+        num_cols (int): number of columns
+        min_val (int): minimum value
+        max_val (int): maximum value
+        col_names (list): list of column names
+        row_names (list): list of row names
+    '''
+
     if col_names is None:
         col_names = ["Col" + str(i) for i in range(num_cols)]
     if row_names is None:
@@ -203,6 +252,14 @@ def generate_random_df(num_rows, num_cols, min_val, max_val, col_names=None, row
 
 
 def generate_table(dataframe, max_rows=15):
+    '''
+    Function to generate a table
+
+    Args:
+        dataframe (pandas.DataFrame): dataframe to display
+        max_rows (int): maximum number of rows to display
+    '''
+
     return html.Table([
         html.Thead(
             html.Tr([html.Th(col) for col in dataframe.columns])
@@ -216,6 +273,14 @@ def generate_table(dataframe, max_rows=15):
 
 
 def generate_two_head_table(dataframe, max_rows=5):
+    '''
+    Function to generate a table with two heads
+
+    Args:
+        dataframe (pandas.DataFrame): dataframe to display
+        max_rows (int): maximum number of rows to display
+    '''
+
     return html.Table([
         html.Thead(
             html.Tr([html.Th([]),
@@ -230,6 +295,7 @@ def generate_two_head_table(dataframe, max_rows=5):
     ])
 
 
+# Generating 4 tables for summary section
 df_existing_nurse_count = generate_random_df(
     4, 5, 0, 100, col_names=["01A", "01B", "01C", "02A", "03A"], row_names=["Total", "Full Time", "Part Time", "Casual"])
 
@@ -252,7 +318,7 @@ summary_tab_data = {
 }
 
 
-@ app.callback(
+@app.callback(
     Output("summary-tab-content", "children"),
     Input("summary-tab", "value")
 )
@@ -260,6 +326,7 @@ def render_summary_tab_content(tab):
     return summary_tab_data[tab]
 
 
+# Graph section
 _projection_graphs = html.Div(children=[
     html.Div(children=[
         html.H4("KPI Projections Across Teams | Utilization"),
@@ -275,8 +342,8 @@ _projection_graphs = html.Div(children=[
 ], className="projection-graphs")
 
 
-@ app.callback(Output(component_id='projection-graph', component_property='figure'),
-               [Input(component_id='projection-graph-dropdown', component_property='value')])
+@app.callback(Output(component_id='projection-graph', component_property='figure'),
+              [Input(component_id='projection-graph-dropdown', component_property='value')])
 def graph_update(dropdown_value):
     df = generate_random_df(5, 2, 0, 100, col_names=["x", "y"], row_names=[
         "01A", "01B", "01C", "02A", "03A"])
@@ -293,6 +360,7 @@ _projections_section = html.Details(children=[
              className="projections-section")
 ], open=True)
 
+# Random map selection for Geoboundary section
 df = px.data.election()
 geojson = px.data.election_geojson()
 
@@ -304,6 +372,7 @@ map_fig.update_layout(margin={'t': 0, 'b': 0, 'l': 0, 'r': 0},
                       paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
 map_fig.update_coloraxes(showscale=False)
 
+# Geoboundary section
 _geoboundary_section = html.Div(children=[
     html.Div(children=[
         html.H4("Geoboundary and Team Assignments"),
@@ -382,6 +451,7 @@ _geoboundary_section = html.Div(children=[
     ], className="geoboundary-section__content")
 ], className="section geoboundary-section")
 
+# Footer notes
 _notes_section = html.Div(children=[
     html.H4("Notes"),
     html.P(children=[
