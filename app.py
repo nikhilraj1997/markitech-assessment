@@ -10,6 +10,7 @@ external_stylesheets = [
 
 app = Dash(__name__, title="Markitech.ai Assessment",
            external_stylesheets=external_stylesheets)
+server = app.server
 
 # Navbar element
 _navbar = html.Div(children=[
@@ -467,6 +468,3 @@ app.layout = html.Div(children=[
     html.Div(children=[html.Div(children=[_outlook_section, _projections_section],
              className="section"), _geoboundary_section, _notes_section])
 ])
-
-if __name__ == '__main__':
-    server = app.server
